@@ -1,4 +1,4 @@
-import streamlit as st
+'''import streamlit as st
 import pickle
 import numpy as np
 import pandas as pd
@@ -303,4 +303,149 @@ if st.button("📊 View Prediction History"):
         )
 
     else:
-        st.warning("No prediction history found.")
+        st.warning("No prediction history found.") first one
+import streamlit as st
+from streamlit_option_menu import option_menu
+
+# ----------------------------------------------------
+# PAGE CONFIG
+# ----------------------------------------------------
+
+st.set_page_config(
+    page_title="SmartCredit AI",
+    page_icon="🏦",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# ----------------------------------------------------
+# LOAD CSS
+# ----------------------------------------------------
+
+with open("assets/style.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+# ----------------------------------------------------
+# SIDEBAR
+# ----------------------------------------------------
+
+with st.sidebar:
+
+    st.image(
+        "https://img.icons8.com/fluency/96/bank-building.png",
+        width=90
+    )
+
+    st.markdown("## SmartCredit AI")
+
+    st.caption("Credit Risk Intelligence Platform")
+
+    selected = option_menu(
+        menu_title=None,
+        options=[
+            "Dashboard",
+            "Predict",
+            "Analytics",
+            "History",
+            "About"
+        ],
+        icons=[
+            "house",
+            "cpu",
+            "graph-up-arrow",
+            "clock-history",
+            "info-circle"
+        ],
+        default_index=0
+    )
+
+# ----------------------------------------------------
+# PAGE ROUTER
+# ----------------------------------------------------
+
+if selected == "Dashboard":
+    exec(open("pages/dashboard.py").read())
+
+elif selected == "Predict":
+    exec(open("pages/predict.py").read())
+
+elif selected == "Analytics":
+    exec(open("pages/analytics.py").read())
+
+elif selected == "History":
+    exec(open("pages/history.py").read())
+
+elif selected == "About":
+    exec(open("pages/about.py").read())'''
+import streamlit as st
+from streamlit_option_menu import option_menu
+
+# ==============================
+# PAGE CONFIG
+# ==============================
+st.set_page_config(
+    page_title="SmartCredit AI",
+    page_icon="🏦",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+# ==============================
+# LOAD CSS
+# ==============================
+try:
+    with open("assets/style.css", "r", encoding="utf-8") as css:
+        st.markdown(f"<style>{css.read()}</style>", unsafe_allow_html=True)
+except FileNotFoundError:
+    st.warning("style.css not found!")
+
+# ==============================
+# SIDEBAR
+# ==============================
+with st.sidebar:
+
+    st.markdown("# 🏦")
+    st.markdown("## SmartCredit AI")
+    st.caption("Credit Risk Intelligence Platform")
+
+    selected = option_menu(
+        menu_title=None,
+        options=[
+            "Dashboard",
+            "Predict",
+            "Analytics",
+            "History"
+        ],
+        icons=[
+            "house",
+            "credit-card",
+            "bar-chart",
+            "clock-history"
+        ],
+        default_index=0,
+    )
+
+# ==============================
+# PAGE ROUTING
+# ==============================
+
+if selected == "Dashboard":
+
+    with open("pages/dashboard.py", "r", encoding="utf-8") as f:
+        exec(f.read())
+
+elif selected == "Predict":
+
+    with open("pages/predict.py", "r", encoding="utf-8") as f:
+        exec(f.read())
+
+elif selected == "Analytics":
+
+    with open("pages/analytics.py", "r", encoding="utf-8") as f:
+        exec(f.read())
+
+elif selected == "History":
+
+    with open("pages/history.py", "r", encoding="utf-8") as f:
+        exec(f.read())
+
