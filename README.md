@@ -1,143 +1,126 @@
-# Credit Risk Prediction System
+# 💳 SmartCredit AI
+### AI-Powered Credit Risk Intelligence Platform
 
-## Overview
-
-The Credit Risk Prediction System is a Machine Learning web application that predicts whether a loan applicant is at **High Risk** or **Low Risk** based on financial information. The application provides real-time predictions through an interactive Streamlit interface and stores every prediction in a MySQL database for future analysis.
-
-This project demonstrates the complete Machine Learning workflow, including data preprocessing, model training, prediction, database integration, and visualization.
+SmartCredit AI is a Machine Learning-powered web application that predicts whether a loan applicant is **High Risk** or **Low Risk** based on financial information. The application provides real-time credit risk prediction, business analytics, and historical record management through an interactive Streamlit dashboard.
 
 ---
 
-## Features
+## 🚀 Features
 
-- Predicts applicant credit risk using a trained Machine Learning model.
-- Interactive Streamlit web interface for easy user interaction.
-- Real-time prediction probability with risk classification.
-- Stores prediction history in a MySQL database.
-- Displays prediction history with timestamps.
-- Interactive dashboard with summary metrics.
-- Pie chart and bar chart for prediction analytics.
-- Clean and responsive user interface.
+### 🏠 Dashboard
+- Executive overview of loan portfolio
+- Total predictions, high-risk & low-risk applicants
+- Average CIBIL score and average risk
+- Risk distribution charts
+- Business summary and recent predictions
+
+### 🔍 Credit Risk Prediction
+- Applicant financial information form
+- Machine Learning-based prediction
+- Risk probability gauge
+- Credit decision summary
+- AI financial assessment
+- Personalized recommendations
+- Credit summary report
+
+### 📊 Business Analytics
+- Daily prediction trends
+- Risk distribution analysis
+- Income vs Loan Amount visualization
+- CIBIL score distribution
+- Portfolio and financial insights
+
+### 📜 Prediction History
+- Store prediction records in MySQL
+- Search and filter records
+- Export prediction history to CSV
+- Clear prediction history
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- Python
-- Streamlit
-- Scikit-learn
-- Pandas
-- NumPy
-- Matplotlib
-- MySQL
-- Pickle
+- **Programming Language:** Python
+- **Frontend:** Streamlit
+- **Machine Learning:** Scikit-learn
+- **Database:** MySQL
+- **Data Processing:** Pandas, NumPy
+- **Visualization:** Plotly
+- **Version Control:** Git & GitHub
+- **Environment Management:** python-dotenv
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
-```
-Credit_Risk_Prediction/
+```text
+SmartCreditAI/
 │
 ├── app.py
 ├── database.py
-├── train.py
 ├── model.pkl
 ├── scaler.pkl
 ├── columns.pkl
-├── loan_data.csv
-├── eda.ipynb
-├── test_db.py
 ├── requirements.txt
-└── README.md
+├── README.md
+│
+├── assets/
+│   └── style.css
+│
+├── pages/
+│   ├── dashboard.py
+│   ├── predict.py
+│   ├── analytics.py
+│   └── history.py
+│
+└── .streamlit/
+    └── config.toml
 ```
 
 ---
 
-## Machine Learning Workflow
+## ⚙️ Installation
 
-1. Data Collection
-2. Data Preprocessing
-3. Feature Scaling
-4. Model Training
-5. Model Serialization
-6. Streamlit Deployment
-7. MySQL Integration
-8. Dashboard Visualization
-
----
-
-## Input Features
-
-- Annual Income
-- Loan Amount
-- CIBIL Score
-- Residential Assets Value
-- Commercial Assets Value
-- Luxury Assets Value
-- Bank Assets Value
-
----
-
-## Prediction Output
-
-The system predicts:
-
-- Low Risk
-- High Risk
-
-Along with:
-
-- Risk Probability (%)
-- Prediction Timestamp
-
----
-
-## Dashboard Features
-
-- Total Predictions
-- High Risk Count
-- Low Risk Count
-- Prediction History
-- Pie Chart Visualization
-- Bar Chart Visualization
-
----
-
-## Database Integration
-
-Every prediction is automatically stored in a MySQL database with:
-
-- Applicant Financial Details
-- Prediction Result
-- Risk Probability
-- Prediction Time
-
-This enables historical tracking and analytical reporting.
-
----
-
-## Installation
-
-Clone the repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/geethamadhuri12/Credit_Risk_Prediction.git
-```
-
-Move into the project directory
-
-```bash
 cd Credit_Risk_Prediction
 ```
 
-Install dependencies
+### Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### Activate Virtual Environment
+
+**Windows**
+
+```bash
+venv\Scripts\activate
+```
+
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the application
+### Configure Database
+
+Create a `.env` file:
+
+```env
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=your_username
+DB_PASSWORD=your_password
+DB_NAME=credit_risk
+```
+
+### Run the Application
 
 ```bash
 streamlit run app.py
@@ -145,26 +128,44 @@ streamlit run app.py
 
 ---
 
-## Future Enhancements
+## 🧠 Machine Learning Workflow
+
+1. Enter applicant financial details.
+2. Preprocess input data.
+3. Predict loan risk using the trained ML model.
+4. Display risk probability and credit decision.
+5. Store prediction in MySQL.
+6. Analyze prediction history through interactive dashboards.
+
+---
+
+## 📸 Application Modules
+
+- 🏠 Dashboard
+- 🔍 Predict
+- 📊 Analytics
+- 📜 History
+
+---
+
+## 🔮 Future Enhancements
 
 - User Authentication
-- Loan Approval Recommendation
-- Explainable AI (SHAP/LIME)
-- Cloud Deployment
+- Role-Based Access Control
+- Batch Prediction using Excel
 - PDF Report Generation
-- Email Notification System
-- REST API Integration
+- Cloud Deployment
+- Enhanced Machine Learning Models
 
 ---
 
-## Author
+## 👩‍💻 Author
 
-**Geetha Madhuri**
+**Kanneboina Geetha Madhuri**
 
-GitHub:
-https://github.com/geethamadhuri12
-
-LinkedIn:
-https://www.linkedin.com/in/kanneboina-geetha-madhuri-992354322
+- GitHub: https://github.com/geethamadhuri12
+- LinkedIn: https://www.linkedin.com/in/kanneboina-geetha-madhuri-992354322/
 
 ---
+
+⭐ If you found this project useful, consider giving it a **star** on GitHub!
