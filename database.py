@@ -74,6 +74,15 @@ def get_predictions():
     """)
 
     return cursor.fetchall()
+# ==============================
+# Clear Prediction History
+# ==============================
+
+def clear_predictions():
+    cursor.execute("""
+        DELETE FROM prediction_history
+    """)
+    conn.commit()
 '''import mysql.connector
 
 conn = mysql.connector.connect(

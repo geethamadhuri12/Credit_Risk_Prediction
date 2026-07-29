@@ -325,31 +325,7 @@ if rows:
 
     st.write("")
 
-    st.markdown("## 🏆 Highest Risk Applicants")
-
-    top_risk = (
-        df.sort_values(
-            by="Risk Probability",
-            ascending=False
-        )
-        .head(10)
-    )
-
-    st.dataframe(
-        top_risk[
-            [
-                "Annual Income",
-                "Loan Amount",
-                "CIBIL Score",
-                "Risk Probability",
-                "Prediction"
-            ]
-        ],
-        use_container_width=True,
-        hide_index=True
-    )
-
-    st.write("")
+    
 
     st.markdown("## 📌 Business Insights")
 
